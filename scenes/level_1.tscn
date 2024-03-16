@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfejhx1hmxhek"]
+[gd_scene load_steps=7 format=3 uid="uid://cfejhx1hmxhek"]
 
 [ext_resource type="PackedScene" uid="uid://b0tex1ao7684j" path="res://scenes/block.tscn" id="1_gt0pl"]
 [ext_resource type="PackedScene" uid="uid://c58vkh2tbeeaa" path="res://scenes/small_fry.tscn" id="2_rf4ia"]
+[ext_resource type="Texture2D" uid="uid://dqltxpx0siqjo" path="res://icon.svg" id="3_h633o"]
+[ext_resource type="Script" path="res://scenes/Icon.gd" id="4_2prba"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ey01j"]
 size = Vector3(10, 0.5, 10)
@@ -41,3 +43,8 @@ transform = Transform3D(0.0245317, -0.63626, 0.771085, 0.401658, 0.712596, 0.575
 
 [node name="smallFry" parent="." instance=ExtResource("2_rf4ia")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.542496, 2)
+
+[node name="Icon" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.792019, 3.0269)
+texture = ExtResource("3_h633o")
+script = ExtResource("4_2prba")
