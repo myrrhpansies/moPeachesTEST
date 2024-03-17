@@ -1,18 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfejhx1hmxhek"]
+[gd_scene load_steps=7 format=3 uid="uid://cfejhx1hmxhek"]
 
 [ext_resource type="PackedScene" uid="uid://c58vkh2tbeeaa" path="res://scenes/Blossom.tscn" id="2_rf4ia"]
 [ext_resource type="PackedScene" uid="uid://c3qbj17hfqlds" path="res://scenes/tomato.tscn" id="3_4mvir"]
+[ext_resource type="Environment" uid="uid://2ircmb5swwhi" path="res://scenes/level_1.tres" id="3_r7w7m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ogil"]
+albedo_color = Color(0.25098, 0.443137, 0.360784, 1)
+roughness = 0.59
 
 [sub_resource type="BoxMesh" id="BoxMesh_ey01j"]
+material = SubResource("StandardMaterial3D_3ogil")
 size = Vector3(10, 0.5, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uqq5h"]
 size = Vector3(10, 0.5, 10)
 
 [node name="Level1" type="Node3D"]
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.932853, 0.0932414, -0.347982, 0, 0.965926, 0.258819, 0.360257, -0.24144, 0.901067, -4.80387, 4, 8)
 
 [node name="floor" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.241192, 0)
@@ -34,3 +37,6 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.0210009, 0.160178
 
 [node name="Blossom" parent="." instance=ExtResource("2_rf4ia")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.688777, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("3_r7w7m")

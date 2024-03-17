@@ -13,6 +13,12 @@ config_version=5
 config/name="3DtEST"
 config/features=PackedStringArray("4.1")
 
+[display]
+
+window/size/viewport_width=576
+window/size/viewport_height=324
+window/stretch/mode="viewport"
+
 [input]
 
 Left={
