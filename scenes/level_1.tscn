@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cfejhx1hmxhek"]
 
-[ext_resource type="PackedScene" uid="uid://b0tex1ao7684j" path="res://scenes/block.tscn" id="1_gt0pl"]
-[ext_resource type="PackedScene" uid="uid://c58vkh2tbeeaa" path="res://scenes/small_fry.tscn" id="2_rf4ia"]
+[ext_resource type="PackedScene" uid="uid://c58vkh2tbeeaa" path="res://scenes/Blossom.tscn" id="2_rf4ia"]
+[ext_resource type="PackedScene" uid="uid://c3qbj17hfqlds" path="res://scenes/tomato.tscn" id="3_4mvir"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ey01j"]
 size = Vector3(10, 0.5, 10)
@@ -16,6 +16,7 @@ transform = Transform3D(0.932853, 0.0932414, -0.347982, 0, 0.965926, 0.258819, 0
 
 [node name="floor" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.241192, 0)
+collision_layer = 4
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="floor"]
@@ -28,16 +29,8 @@ shape = SubResource("BoxShape3D_uqq5h")
 transform = Transform3D(1, 0, 0, 0, 0.177755, 0.984075, 0, -0.984075, 0.177755, 0, 9, 0)
 shadow_enabled = true
 
-[node name="blocks" type="Node3D" parent="."]
+[node name="tomatoo1" parent="." instance=ExtResource("3_4mvir")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.0210009, 0.160178, 3.98538)
 
-[node name="Block1" parent="blocks" instance=ExtResource("1_gt0pl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
-
-[node name="Block2" parent="blocks" instance=ExtResource("1_gt0pl")]
-transform = Transform3D(0.871145, -0.491025, 0, 0.401658, 0.712596, 0.575219, -0.282447, -0.5011, 0.817999, -0.217193, 4.77727, 0)
-
-[node name="Block3" parent="blocks" instance=ExtResource("1_gt0pl")]
-transform = Transform3D(0.0245317, -0.63626, 0.771085, 0.401658, 0.712596, 0.575219, -0.915461, 0.295602, 0.27304, -0.217193, 8.02596, 0)
-
-[node name="smallFry" parent="." instance=ExtResource("2_rf4ia")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.542496, 2)
+[node name="Blossom" parent="." instance=ExtResource("2_rf4ia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.688777, 0)

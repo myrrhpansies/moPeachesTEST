@@ -1,13 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://c58vkh2tbeeaa"]
 
-[ext_resource type="Script" path="res://scenes/small_fry.gd" id="1_iiwk5"]
+[ext_resource type="Script" path="res://scenes/Blossom.gd" id="1_m11r0"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_b3nmy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jqdg6"]
 
-[node name="smallFry" type="CharacterBody3D"]
-script = ExtResource("1_iiwk5")
+[node name="Blossom" type="CharacterBody3D"]
+collision_mask = 4
+script = ExtResource("1_m11r0")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_b3nmy")
