@@ -18,6 +18,7 @@ config/features=PackedStringArray("4.1")
 window/size/viewport_width=576
 window/size/viewport_height=324
 window/stretch/mode="viewport"
+window/stretch/aspect="ignore"
 
 [input]
 

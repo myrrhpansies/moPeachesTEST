@@ -3,6 +3,7 @@ extends CharacterBody3D
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
+@export var sensitivity = 100
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -23,7 +24,7 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("Left", "Right", "Up", "Down")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var direction = (transform.basis *Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
@@ -31,6 +32,15 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
+	
 	move_and_slide()
-	#camera controller
-	$cameraCon.position = lerp($cameraCon.position , position, 0.25)
+#	#camera controller
+#	$cameraCon.position = lerp($cameraCon.position , position, 0.25)
+
+func _input(event):
+	if event is InputEventMouseMotion:
+		rotation.y -= event.relative.x / sensitivity
+		$cameraCon.rotation.x -= event.relative.y / sensitivity
+		$cameraCon.rotation.x = clamp($cameraCon.rotation.x, deg_to_rad(-20), deg_to_rad(20))
+		
+		
