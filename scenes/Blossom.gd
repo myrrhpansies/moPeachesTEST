@@ -31,16 +31,19 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-
 	
+
+		
 	move_and_slide()
 #	#camera controller
 #	$cameraCon/Camera3Dposition.position = lerp($cameraCon.position , position, 0.25)
 
 func _input(event):
 	if event is InputEventMouseMotion:
-		rotation.y -= event.relative.x / sensitivity
+		#rotates blossom
+		#rotation.y -= event.relative.x / sensitivity
+		#rotates camera left and right
+		$cameraCon.rotation.y -= event.relative.x / sensitivity
 		$cameraCon.rotation.x -= event.relative.y / sensitivity
 		$cameraCon.rotation.x = clamp($cameraCon.rotation.x, deg_to_rad(-20), deg_to_rad(20))
-		
-		
+
