@@ -35,7 +35,7 @@ func _physics_process(delta):
 	
 	move_and_slide()
 #	#camera controller
-#	$cameraCon.position = lerp($cameraCon.position , position, 0.25)
+#	$cameraCon/Camera3Dposition.position = lerp($cameraCon.position , position, 0.25)
 
 func _input(event):
 	if event is InputEventMouseMotion:
