@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://cfejhx1hmxhek"]
 
 [ext_resource type="Script" path="res://scenes/level_1.gd" id="1_13hux"]
-[ext_resource type="PackedScene" uid="uid://c58vkh2tbeeaa" path="res://scenes/Blossom.tscn" id="2_rf4ia"]
 [ext_resource type="PackedScene" uid="uid://c3qbj17hfqlds" path="res://scenes/tomato.tscn" id="3_4mvir"]
 [ext_resource type="Environment" uid="uid://2ircmb5swwhi" path="res://scenes/level_1.tres" id="3_r7w7m"]
+[ext_resource type="PackedScene" uid="uid://v23e3qgj668t" path="res://scenes/goose.tscn" id="4_aadrj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ogil"]
 albedo_color = Color(0.25098, 0.443137, 0.360784, 1)
@@ -20,7 +20,7 @@ size = Vector3(10, 0.5, 10)
 script = ExtResource("1_13hux")
 
 [node name="floor" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.241192, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.241192, 0)
 collision_layer = 4
 metadata/_edit_group_ = true
 
@@ -35,10 +35,10 @@ transform = Transform3D(1, 0, 0, 0, 0.177755, 0.984075, 0, -0.984075, 0.177755, 
 shadow_enabled = true
 
 [node name="tomatoo1" parent="." instance=ExtResource("3_4mvir")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.0210009, 0.160178, 3.98538)
-
-[node name="Blossom" parent="." instance=ExtResource("2_rf4ia")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.688777, 0)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.0210009, 0.79683, 3.98538)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("3_r7w7m")
+
+[node name="goose" parent="." instance=ExtResource("4_aadrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.392463, 0)
